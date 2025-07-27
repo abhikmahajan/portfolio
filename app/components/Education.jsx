@@ -4,7 +4,7 @@ import lpu from '../assets/lpu.jpeg'
 
 const Education = () => {
   return (
-    <div>
+    <div id='education'>
         <div className='max-w-96 lg:max-w-2xl mx-auto px-4 mt-12'>
             <h1 className='text-2xl font-bold'>Education</h1>
             <div className='flex items-center '>
