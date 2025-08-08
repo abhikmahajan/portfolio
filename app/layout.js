@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Abhik Mahajan",
-  description: "A portfolio website for Abhik Mahajan | Software/Web Developer",
+  description: "Abhik Mahajan | A portfolio website of Abhik Mahajan | Software/Web Developer | Contact to get freelamcing services at affordable prices",
 };
 
 export default function RootLayout({ children }) {
