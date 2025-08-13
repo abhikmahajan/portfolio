@@ -15,9 +15,9 @@ const home = () => {
       <Header />
       <About />
       <Education />
+      <Experience />
       <Skills />
       <Projects />
-      <Experience />
       <Contact />
 <div className="fixed bottom-0 left-0 w-full h-40 bg-gradient-to-b from-transparent to-white pointer-events-none z-[999]"></div>
 

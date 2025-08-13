@@ -66,7 +66,7 @@ const Projects = () => {
 
             <div className=' grid grid-cols-1 lg:grid-cols-2 gap-4'>
                 {data.map((project) => (
-                    <div key={project.id} className='mt-4 p-4 border border-gray-300 rounded-lg'>
+                    <div key={project.id} className='mt-4 p-4 border border-gray-300 shadow-lg rounded-lg'>
                         
                             <Image 
                                 src={project.image} 
