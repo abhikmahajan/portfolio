@@ -10,7 +10,7 @@ import Education from './components/Education'
 
 const home = () => {
   return (
-    <div className='mb-40'>
+    <div className=' bg-gradient-to-r from-white via-blue-100 to-white pb-24'>
       <Navbar />
       <Header />
       <About />
@@ -19,7 +19,7 @@ const home = () => {
       <Skills />
       <Projects />
       <Contact />
-<div className="fixed bottom-0 left-0 w-full h-40 bg-gradient-to-b from-transparent to-white pointer-events-none z-[999]"></div>
+<div className="fixed bottom-0 left-0 w-full h-40 bg-gradient-to-b from-transparent  to-blue-100 pointer-events-none z-[999]"></div>
 
     </div>
   )

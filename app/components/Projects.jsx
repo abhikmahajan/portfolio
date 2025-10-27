@@ -60,7 +60,7 @@ const Projects = () => {
 
   return (
     <div id='projects'>
-        <div className='max-w-96 lg:max-w-2xl mx-auto px-4 mt-12'>
+        <div className='max-w-96 lg:max-w-2xl mx-auto px-4 mt-12 bg-gradient-to-b from-white to-blue-50 p-6 rounded-lg shadow-lg'>
             <h1 className='text-2xl font-bold'>Projects</h1>
             <p className='mt-2 text-neutral-700'>Here are some of the projects I have worked on:</p>
 
