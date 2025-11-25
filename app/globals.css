@@ -3,3 +3,17 @@
 *{
     font-family: 'Outfit', sans-serif;
 }
+
+html {
+  color-scheme: light dark;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Smooth theme transition for all elements */
+* {
+  @apply transition-colors duration-300;
+}

@@ -1,11 +1,15 @@
-import { BookMarked, CircleUserRound, Contact, Home, Layers2, MoonIcon } from "lucide-react";
-import React from "react";
+"use client"
+
+import { BookMarked, CircleUserRound, Contact, Home, Layers2, Moon, Sun } from "lucide-react";
+import React, { useState, useEffect } from "react";
 
 const Navbar = () => {
+  
+
   return (
-    <div className="fixed w-full ">
-        <div className="max-w-72 lg:max-w-xl mx-auto px-4 py-3 ">
-      <ul className="flex gap-5 lg:gap-8 justify-center items-center border border-gray-300 rounded-xl p-2 bg-gradient-to-r from-white via-gray-100 to-blue-50 shadow-lg">
+    <div className="fixed w-full z-[1000] bottom-6">
+        <div className="max-w-72 lg:max-w-xl mx-auto px-4 py-3">
+      <ul className="flex gap-5 lg:gap-8 justify-center items-center text-black dark:text-white border border-gray-300 dark:border-gray-600 rounded-xl p-3 bg-gradient-to-r from-white via-gray-100 to-blue-50 dark:from-slate-900 dark:via-slate-800 dark:to-blue-900">
         <li>
           <a href="#header">
             <Home className="h-5"/>

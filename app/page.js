@@ -10,8 +10,8 @@ import Education from './components/Education'
 
 const home = () => {
   return (
-    <div className=' bg-gradient-to-r from-white via-blue-100 to-white pb-24'>
-      <Navbar />
+    <div className='min-h-screen bg-gradient-to-br from-white via-blue-50 to-white dark:from-slate-950 dark:via-slate-900 dark:to-black pb-24 transition-colors duration-300'>
+      
       <Header />
       <About />
       <Education />
@@ -19,7 +19,8 @@ const home = () => {
       <Skills />
       <Projects />
       <Contact />
-<div className="fixed bottom-0 left-0 w-full h-40 bg-gradient-to-b from-transparent  to-blue-100 pointer-events-none z-[999]"></div>
+      <Navbar />
+      <div className="fixed bottom-0 left-0 w-full h-40 bg-gradient-to-b from-transparent to-blue-100 dark:to-blue-950 pointer-events-none z-[999]"></div>
 
     </div>
   )

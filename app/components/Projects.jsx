@@ -60,13 +60,13 @@ const Projects = () => {
 
   return (
     <div id='projects'>
-        <div className='max-w-96 lg:max-w-2xl mx-auto px-4 mt-12 bg-gradient-to-b from-white to-blue-50 p-6 rounded-lg shadow-lg'>
-            <h1 className='text-2xl font-bold'>Projects</h1>
-            <p className='mt-2 text-neutral-700'>Here are some of the projects I have worked on:</p>
+        <div className='max-w-96 lg:max-w-2xl mx-auto px-4 mt-12 bg-gradient-to-b from-white to-blue-50 dark:from-slate-900 dark:to-slate-800 p-6 rounded-lg shadow-lg'>
+            <h1 className='text-2xl font-bold text-black dark:text-white'>Projects</h1>
+            <p className='mt-2 text-neutral-700 dark:text-neutral-300'>Here are some of the projects I have worked on:</p>
 
             <div className=' grid grid-cols-1 lg:grid-cols-2 gap-4'>
                 {data.map((project) => (
-                    <div key={project.id} className='mt-4 p-4 border border-gray-300 shadow-lg rounded-lg'>
+                    <div key={project.id} className='mt-4 p-4 border border-gray-300 dark:border-gray-600 shadow-lg rounded-lg bg-gray-50 dark:bg-slate-800'>
                         
                             <Image 
                                 src={project.image} 
@@ -76,10 +76,10 @@ const Projects = () => {
                                 className='mb-4 w-full h-40 object-cover rounded'
                             />
                         <div>
-                        <h2 className='text-xl font-semibold'>{project.title}</h2>
-                        <p className='mt-2 text-gray-600'>{project.description}</p>
-                        <p className='mt-2 text-gray-500'>Technologies: {project.technologies.join(', ')}</p>
-                        <div className='flex items-center mt-2 gap-4'>
+                        <h2 className='text-xl font-semibold text-black dark:text-white'>{project.title}</h2>
+                        <p className='mt-2 text-gray-600 dark:text-gray-400'>{project.description}</p>
+                        <p className='mt-2 text-gray-500 dark:text-gray-400'>Technologies: {project.technologies.join(', ')}</p>
+                        <div className='flex items-center mt-2 gap-4 text-black dark:text-white'>
                         <a href={project.Weblink}><Globe/></a>
                         <a href={project.github} ><Github/></a>
                         </div>

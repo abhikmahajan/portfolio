@@ -1,4 +1,5 @@
-import { Geist, Geist_Mono, Outfit } from "next/font/google";
+import ThemeWrapper from "./components/ThemeWrapper"
+import {  Geist_Mono, Outfit } from "next/font/google";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -18,12 +19,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${outfit.className} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${outfit.className} ${geistMono.variable}`}>
+        <ThemeWrapper>{children}</ThemeWrapper>
       </body>
     </html>
-  );
+  )
 }
