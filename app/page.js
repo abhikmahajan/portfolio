@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import Navbar from './components/Navbar'
 import About from './components/About'
@@ -7,23 +9,35 @@ import Projects from './components/Projects'
 import Experience from './components/Experience'
 import Contact from './components/Contact'
 import Education from './components/Education'
+import ParticleBackground from './components/ParticleBackground'
 
-const home = () => {
+export default function Home() {
   return (
-    <div className='min-h-screen bg-gradient-to-br from-white via-blue-50 to-white dark:from-slate-950 dark:via-slate-900 dark:to-black pb-24 transition-colors duration-300'>
+    <div className='min-h-screen bg-background text-foreground relative'>
+      {/* Matrix grid background */}
+      <div className="matrix-bg" />
       
-      <Header />
-      <About />
-      <Education />
-      <Experience />
-      <Skills />
-      <Projects />
-      <Contact />
+      {/* Particle animation */}
+      <ParticleBackground />
+      
+      {/* Scanline effect */}
+      <div className="scanline" />
+      
+      {/* Main content */}
+      <main className="relative z-10">
+        <Header />
+        <About />
+        <Education />
+        <Experience />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
+      
       <Navbar />
-      <div className="fixed bottom-0 left-0 w-full h-40 bg-gradient-to-b from-transparent to-blue-100 dark:to-blue-950 pointer-events-none z-[999]"></div>
-
+      
+      {/* Bottom gradient fade */}
+      <div className="fixed bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent pointer-events-none z-40" />
     </div>
   )
 }
-
-export default home
