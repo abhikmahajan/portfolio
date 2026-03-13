@@ -1,70 +1,128 @@
+'use client'
+
 import React from 'react'
+import { 
+  Code, 
+  Server, 
+  Database, 
+  Cpu, 
+  Wrench,
+  Hexagon
+} from 'lucide-react'
 
 const Skills = () => {
+  const skillCategories = [
+    {
+      title: 'Frontend',
+      icon: Code,
+      color: 'primary',
+      skills: ['JavaScript', 'React.js', 'Tailwind', 'PrebuiltUI', 'Figma', 'Responsive'],
+    },
+    {
+      title: 'Backend',
+      icon: Server,
+      color: 'accent',
+      skills: ['Node.js', 'Express.js', 'PHP', 'Rest APIs'],
+    },
+    {
+      title: 'Database',
+      icon: Database,
+      color: 'primary',
+      skills: ['PostgreSQL', 'MongoDB', 'MySQL'],
+    },
+    {
+      title: 'CS Fundamentals',
+      icon: Cpu,
+      color: 'accent',
+      skills: ['Java', 'OOPs', 'OS', 'DBMS'],
+    },
+    {
+      title: 'Tools',
+      icon: Wrench,
+      color: 'primary',
+      skills: ['Git', 'Github', 'VS Code', 'Cursor'],
+    },
+  ]
+
   return (
-    <div id='skills' className='max-w-96 lg:max-w-2xl mx-auto px-4 mt-12 bg-gradient-to-b from-white to-blue-50 dark:from-slate-900 dark:to-slate-800 p-6 rounded-lg shadow-lg'>
-        <div>
-            <h1 className='text-2xl font-bold text-black dark:text-white'>Skills</h1>
-            <p className='text-neutral-700 dark:text-neutral-300'>The skills, tools and technologies I am really good at:</p>
-
-            <div>
-
-
-            <div className='mt-8 border border-gray-300 dark:border-gray-600 shadow-lg p-5 rounded-lg bg-gray-50 dark:bg-slate-800'>
-              <h1 className='text-lg font-semibold text-black dark:text-white'>Frontend</h1>
-              <div className='mt-4 grid grid-cols-3 lg:grid-cols-4 w-full gap-4'>
-                <span className='bg-gray-200 dark:bg-slate-700 dark:text-white p-2 rounded-lg text-center hover:scale-110 transition duration-200'>JavaScript</span>
-                <span className='bg-gray-200 dark:bg-slate-700 dark:text-white p-2 rounded-lg text-center hover:scale-110 transition duration-200'>React.js</span>
-                <span className='bg-gray-200 dark:bg-slate-700 dark:text-white p-2 rounded-lg text-center hover:scale-110 transition duration-200'>Tailwind</span>
-                <span className='bg-gray-200 dark:bg-slate-700 dark:text-white p-2 rounded-lg text-center hover:scale-110 transition duration-200'>PrebuiltUI</span>
-                <span className='bg-gray-200 dark:bg-slate-700 dark:text-white p-2 rounded-lg text-center hover:scale-110 transition duration-200'>Figma</span>
-                <span className='bg-gray-200 dark:bg-slate-700 dark:text-white p-2 rounded-lg text-center hover:scale-110 transition duration-200'>Responsive</span>
-              </div>
-            </div>
-
-            <div className='mt-5 border border-gray-300 dark:border-gray-600 shadow-lg p-5 rounded-lg bg-gray-50 dark:bg-slate-800'>
-              <h1 className='text-lg font-semibold text-black dark:text-white'>Backend</h1>
-              <div className='mt-4 grid grid-cols-3 lg:grid-cols-4 w-full gap-4'>
-                <span className='bg-gray-200 dark:bg-slate-700 dark:text-white p-2 rounded-lg text-center hover:scale-110 transition duration-200'>Node.js</span>
-                <span className='bg-gray-200 dark:bg-slate-700 dark:text-white p-2 rounded-lg text-center hover:scale-110 transition duration-200'>Express.js</span>
-                <span className='bg-gray-200 dark:bg-slate-700 dark:text-white p-2 rounded-lg text-center hover:scale-110 transition duration-200'>PHP</span>
-                <span className='bg-gray-200 dark:bg-slate-700 dark:text-white p-2 rounded-lg text-center hover:scale-110 transition duration-200'>Rest APIs</span>
-              </div>
-            </div>
-
-            <div className='mt-5 border border-gray-300 dark:border-gray-600 shadow-lg p-5 rounded-lg bg-gray-50 dark:bg-slate-800'>
-              <h1 className='text-lg font-semibold text-black dark:text-white'>Database</h1>
-              <div className='mt-4 grid grid-cols-3 lg:grid-cols-4 w-full gap-4'>
-                <span className='bg-gray-200 dark:bg-slate-700 dark:text-white p-2 rounded-lg text-center hover:scale-110 transition duration-200'>PostgreSQL</span>
-                <span className='bg-gray-200 dark:bg-slate-700 dark:text-white p-2 rounded-lg text-center hover:scale-110 transition duration-200'>MongoDB</span>
-                <span className='bg-gray-200 dark:bg-slate-700 dark:text-white p-2 rounded-lg text-center hover:scale-110 transition duration-200'>MySQL</span>
-              </div>
-            </div>
-
-            <div className='mt-5 border border-gray-300 dark:border-gray-600 shadow-lg p-5 rounded-lg bg-gray-50 dark:bg-slate-800'>
-              <h1 className='text-lg font-semibold text-black dark:text-white'>CS Fundamentals</h1>
-              <div className='mt-4 grid grid-cols-3 lg:grid-cols-4 w-full gap-4'>
-                <span className='bg-gray-200 dark:bg-slate-700 dark:text-white p-2 rounded-lg text-center hover:scale-110 transition duration-200'>Java</span>
-                <span className='bg-gray-200 dark:bg-slate-700 dark:text-white p-2 rounded-lg text-center hover:scale-110 transition duration-200'>OOPs</span>
-                <span className='bg-gray-200 dark:bg-slate-700 dark:text-white p-2 rounded-lg text-center hover:scale-110 transition duration-200'>OS</span>
-                <span className='bg-gray-200 dark:bg-slate-700 dark:text-white p-2 rounded-lg text-center hover:scale-110 transition duration-200'>DBMS</span>
-              </div>
-            </div>
-
-            <div className='mt-5 border border-gray-300 dark:border-gray-600 shadow-lg p-5 rounded-lg bg-gray-50 dark:bg-slate-800'>
-              <h1 className='text-lg font-semibold text-black dark:text-white'>Tools</h1>
-              <div className='mt-4 grid grid-cols-3 lg:grid-cols-4 w-full gap-4'>
-                <span className='bg-gray-200 dark:bg-slate-700 dark:text-white p-2 rounded-lg text-center hover:scale-110 transition duration-200'>Git</span>
-                <span className='bg-gray-200 dark:bg-slate-700 dark:text-white p-2 rounded-lg text-center hover:scale-110 transition duration-200'>Github</span>
-                <span className='bg-gray-200 dark:bg-slate-700 dark:text-white p-2 rounded-lg text-center hover:scale-110 transition duration-200'>VS Code</span>
-                <span className='bg-gray-200 dark:bg-slate-700 dark:text-white p-2 rounded-lg text-center hover:scale-110 transition duration-200'>Cursor</span>
-              </div>
-            </div>
-
-
-            </div>
+    <section id='skills' className='py-12 px-4'>
+      <div className='max-w-4xl mx-auto'>
+        {/* Section header */}
+        <div className='flex items-center gap-4 mb-4'>
+          <span className='text-primary font-mono text-sm'>04.</span>
+          <h2 className='text-2xl md:text-3xl font-bold'>Skills</h2>
+          <div className='flex-1 h-px bg-gradient-to-r from-primary/50 to-transparent' />
         </div>
-    </div>
+
+        <p className='text-muted-foreground mb-8'>
+          The skills, tools and technologies I am really good at:
+        </p>
+
+        {/* Skills grid */}
+        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-4'>
+          {skillCategories.map((category, index) => {
+            const Icon = category.icon
+            const colorClass = category.color === 'primary' ? 'primary' : 'accent'
+            
+            return (
+              <div 
+                key={category.title}
+                className='tech-card rounded-xl p-5 hover-lift group'
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                {/* Header */}
+                <div className='flex items-center gap-3 mb-4'>
+                  <div className={`p-2 rounded-lg bg-${colorClass}/10 border border-${colorClass}/30 group-hover:border-${colorClass}/60 transition-colors`}>
+                    <Icon className={`w-5 h-5 text-${colorClass}`} />
+                  </div>
+                  <h3 className='font-semibold text-foreground'>{category.title}</h3>
+                </div>
+
+                {/* Skills */}
+                <div className='flex flex-wrap gap-2'>
+                  {category.skills.map((skill) => (
+                    <span 
+                      key={skill}
+                      className='relative px-3 py-1.5 text-sm font-mono bg-secondary/50 border border-border rounded-lg text-muted-foreground hover:text-foreground hover:border-primary/50 hover:bg-primary/5 transition-all cursor-default group/skill'
+                    >
+                      <span className='relative z-10'>{skill}</span>
+                      <span className='absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover/skill:opacity-100 transition-opacity rounded-lg' />
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )
+          })}
+        </div>
+
+        {/* Tech stack visual */}
+        <div className='mt-12 tech-card rounded-xl p-6'>
+          <div className='flex items-center gap-2 mb-4'>
+            <Hexagon className='w-5 h-5 text-primary' />
+            <h3 className='font-semibold'>Tech Stack Overview</h3>
+          </div>
+          
+          <div className='terminal'>
+            <div className='terminal-header'>
+              <span className='terminal-dot bg-red-500'></span>
+              <span className='terminal-dot bg-yellow-500'></span>
+              <span className='terminal-dot bg-green-500'></span>
+              <span className='ml-2 text-xs text-muted-foreground font-mono'>tech_stack.sh</span>
+            </div>
+            <div className='p-4 font-mono text-sm space-y-1'>
+              <p><span className='text-primary'>$</span> <span className='text-muted-foreground'>echo</span> <span className='text-accent'>$FRONTEND</span></p>
+              <p className='text-foreground pl-4'>React.js + Tailwind CSS + JavaScript</p>
+              <p className='mt-2'><span className='text-primary'>$</span> <span className='text-muted-foreground'>echo</span> <span className='text-accent'>$BACKEND</span></p>
+              <p className='text-foreground pl-4'>Node.js + Express.js + REST APIs</p>
+              <p className='mt-2'><span className='text-primary'>$</span> <span className='text-muted-foreground'>echo</span> <span className='text-accent'>$DATABASE</span></p>
+              <p className='text-foreground pl-4'>PostgreSQL + MongoDB + MySQL</p>
+            </div>
+          </div>
+        </div>
+
+        <div className='section-divider' />
+      </div>
+    </section>
   )
 }
 

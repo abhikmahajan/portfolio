@@ -1,28 +1,30 @@
-import ThemeWrapper from "./components/ThemeWrapper"
-import {  Geist_Mono, Outfit } from "next/font/google";
+import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const outfit = Outfit({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-sans",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata = {
-  title: "Abhik Mahajan",
-  description: "Abhik Mahajan | A portfolio website of Abhik Mahajan | Software/Web Developer | Contact to get freelamcing services at affordable prices",
+  title: "Abhik Mahajan | Full Stack Developer",
+  description: "Full Stack Developer specializing in React, Node.js, and modern web technologies. Building scalable solutions and contributing to open source.",
+  keywords: ["Full Stack Developer", "React", "Node.js", "Web Developer", "Open Source"],
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${outfit.className} ${geistMono.variable}`}>
-        <ThemeWrapper>{children}</ThemeWrapper>
+    <html lang="en" className="dark">
+      <body className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
+        {children}
       </body>
     </html>
-  )
+  );
 }
