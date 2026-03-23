@@ -96,6 +96,13 @@ const Header = () => {
               >
                 Contact Me
               </a>
+              <a 
+                href='/resume.pdf'
+                download
+                className='px-6 py-3 bg-accent/20 border border-accent text-accent font-semibold rounded-lg hover:bg-accent/30 transition-all hover-lift'
+              >
+                My Resume
+              </a>
             </div>
 
             {/* Social links */}
