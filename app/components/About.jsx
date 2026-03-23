@@ -8,7 +8,7 @@ const About = () => {
     { icon: Code2, value: '1+', label: 'Years Coding' },
     { icon: Rocket, value: '10+', label: 'Projects Built' },
     { icon: GitPullRequest, value: '50+', label: 'PRs Merged' },
-    { icon: Trophy, value: '160', label: 'LeetCode Solved', link: 'https://leetcode.com/u/abhik_mahajan/', isBadge: true },
+    { icon: Trophy, value: '160', label: 'LeetCode Solved', link: 'https://leetcode.com/u/abhik_mahajan/' },
   ]
 
   return (
@@ -58,19 +58,19 @@ const About = () => {
 
           {/* Stats cards */}
           <div className='lg:col-span-2 space-y-4'>
-            {stats.map(({ icon: Icon, value, label, link, isBadge }, index) => {
+            {stats.map(({ icon: Icon, value, label, link }, index) => {
               const StatCard = (
                 <div 
                   key={label}
-                  className={`tech-card rounded-xl p-5 hover-lift flex items-center gap-4 ${isBadge ? 'border-accent/30' : ''}`}
+                  className='tech-card rounded-xl p-5 hover-lift flex items-center gap-4'
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className={`p-3 rounded-lg ${isBadge ? 'bg-accent/10 border border-accent/20' : 'bg-primary/10 border border-primary/20'}`}>
-                    <Icon className={`w-6 h-6 ${isBadge ? 'text-accent' : 'text-primary'}`} />
+                  <div className='p-3 rounded-lg bg-primary/10 border border-primary/20 flex-shrink-0'>
+                    <Icon className='w-6 h-6 text-primary' />
                   </div>
-                  <div>
-                    <p className={`text-2xl font-bold ${isBadge ? 'text-accent' : 'gradient-text'}`}>{value}</p>
-                    <p className='text-sm text-muted-foreground'>{label}</p>
+                  <div className='flex-1 min-w-0'>
+                    <p className='text-2xl font-bold gradient-text'>{value}</p>
+                    <p className='text-sm text-muted-foreground truncate'>{label}</p>
                   </div>
                 </div>
               )
