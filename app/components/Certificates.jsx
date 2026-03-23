@@ -1,30 +1,33 @@
 'use client'
 
 import React from 'react'
-import { Award } from 'lucide-react'
+import { Award, ExternalLink } from 'lucide-react'
 
 const Certificates = () => {
   const certificates = [
     {
       id: 1,
-      title: "Certificate 1",
-      issuer: "Add your certificate issuer here",
-      date: "Add date",
-      description: "Add certificate description here"
+      title: "Introduction to Software Engineering",
+      issuer: "IBM",
+      date: "Sep 2025",
+      description: "Professional certification in software engineering fundamentals and best practices.",
+      link: "https://drive.google.com/file/d/1eyBtqv5P7q_zEYs_NAmADSdmcYq0T4SK/view?usp=sharing"
     },
     {
       id: 2,
-      title: "Certificate 2",
-      issuer: "Add your certificate issuer here",
-      date: "Add date",
-      description: "Add certificate description here"
+      title: "Privacy and Security in Online Social Media",
+      issuer: "NPTEL – IIT Madras",
+      date: "Aug 2025",
+      description: "Advanced course on privacy and security concepts in online social platforms.",
+      link: "https://drive.google.com/file/d/13m2AD1D3uvArnmKLamIF0X3EOTKyUkxz/view?usp=sharing"
     },
     {
       id: 3,
-      title: "Certificate 3",
-      issuer: "Add your certificate issuer here",
-      date: "Add date",
-      description: "Add certificate description here"
+      title: "Introduction to Hardware & Operating Systems",
+      issuer: "IBM – Coursera",
+      date: "Sep 2024",
+      description: "Comprehensive training on computer hardware architecture and operating system principles.",
+      link: "https://www.coursera.org/account/accomplishments/records/08Z1TGPZK7PD"
     }
   ]
 
@@ -73,10 +76,15 @@ const Certificates = () => {
 
               {/* Decorative line */}
               <div className='mt-4 pt-4 border-t border-border' />
-              <div className='flex items-center gap-2'>
-                <div className='w-2 h-2 rounded-full bg-primary' />
-                <span className='text-xs text-muted-foreground font-mono'>Verified Credential</span>
-              </div>
+              <a 
+                href={cert.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className='flex items-center gap-2 text-primary hover:text-accent transition-colors text-sm font-mono'
+              >
+                <span>View Credential</span>
+                <ExternalLink className='w-3 h-3' />
+              </a>
             </div>
           ))}
         </div>
