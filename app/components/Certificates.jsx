@@ -7,27 +7,24 @@ const Certificates = () => {
   const certificates = [
     {
       id: 1,
-      title: "Introduction to Software Engineering",
-      issuer: "IBM",
-      date: "Sep 2025",
-      description: "Comprehensive introduction to software engineering principles and practices",
-      link: "https://drive.google.com/file/d/1eyBtqv5P7q_zEYs_NAmADSdmcYq0T4SK/view?usp=sharing"
+      title: "Certificate 1",
+      issuer: "Add your certificate issuer here",
+      date: "Add date",
+      description: "Add certificate description here"
     },
     {
       id: 2,
-      title: "Privacy and Security in Online Social Media",
-      issuer: "NPTEL – IIT Madras",
-      date: "Aug 2025",
-      description: "Advanced topics on privacy and security in online social media platforms",
-      link: "https://drive.google.com/file/d/13m2AD1D3uvArnmKLamIF0X3EOTKyUkxz/view?usp=sharing"
+      title: "Certificate 2",
+      issuer: "Add your certificate issuer here",
+      date: "Add date",
+      description: "Add certificate description here"
     },
     {
       id: 3,
-      title: "Introduction to Hardware & Operating Systems",
-      issuer: "IBM – Coursera",
-      date: "Sep 2024",
-      description: "Fundamentals of computer hardware architecture and operating systems",
-      link: "https://www.coursera.org/account/accomplishments/records/08Z1TGPZK7PD"
+      title: "Certificate 3",
+      issuer: "Add your certificate issuer here",
+      date: "Add date",
+      description: "Add certificate description here"
     }
   ]
 
@@ -76,15 +73,10 @@ const Certificates = () => {
 
               {/* Decorative line */}
               <div className='mt-4 pt-4 border-t border-border' />
-              <a 
-                href={cert.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className='inline-flex items-center gap-2 text-xs text-accent font-mono hover:text-primary transition-colors'
-              >
+              <div className='flex items-center gap-2'>
                 <div className='w-2 h-2 rounded-full bg-primary' />
-                <span>View Credential →</span>
-              </a>
+                <span className='text-xs text-muted-foreground font-mono'>Verified Credential</span>
+              </div>
             </div>
           ))}
         </div>
