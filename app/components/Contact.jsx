@@ -1,6 +1,6 @@
 'use client'
 
-import { Github, Instagram, Linkedin, Mail, Twitter, Send, MessageSquare } from 'lucide-react'
+import { Github, Instagram, Linkedin, Mail, Twitter, Send, MessageSquare, Phone } from 'lucide-react'
 import React from 'react'
 
 const Contact = () => {
@@ -47,6 +47,13 @@ const Contact = () => {
           >
             <MessageSquare className='w-5 h-5' />
             DM on X
+          </a>
+          <a 
+            href='tel:+916284951556'
+            className='inline-flex items-center justify-center gap-2 px-8 py-4 border border-accent text-accent font-semibold rounded-lg hover:bg-accent/10 transition-all'
+          >
+            <Phone className='w-5 h-5' />
+            +91-6284951556
           </a>
         </div>
 
