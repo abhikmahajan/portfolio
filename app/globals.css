@@ -26,12 +26,20 @@
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
   background: var(--color-background);
   color: var(--color-foreground);
   overflow-x: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#__next {
+  height: 100%;
 }
 
 /* Scrollbar styling */
