@@ -12,10 +12,14 @@ import Experience from './components/Experience'
 import Contact from './components/Contact'
 import Education from './components/Education'
 import ParticleBackground from './components/ParticleBackground'
+import Scene from './components/Scene'
 
 export default function Home() {
   return (
     <div className='min-h-screen bg-background text-foreground relative'>
+      <div id="canvas-container" style={{ height: "200vh" }}>
+      <Scene />
+    </div>
       {/* Matrix grid background */}
       <div className="matrix-bg" />
       
