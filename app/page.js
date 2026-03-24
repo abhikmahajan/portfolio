@@ -16,31 +16,39 @@ import Scene from './components/Scene'
 
 export default function Home() {
   return (
-    <div className='min-h-screen bg-background text-foreground relative'>
-      <div id="canvas-container" style={{ height: "200vh" }}>
-      <Scene />
-    </div>
-      {/* Matrix grid background */}
-      <div className="matrix-bg" />
+    <div className='bg-background text-foreground relative'>
+      {/* Canvas container - fixed for 3D scene */}
+      <div id="canvas-container" className="fixed top-0 left-0 w-full h-screen z-0 pointer-events-none">
+        <Scene />
+      </div>
       
-      {/* Particle animation */}
-      <ParticleBackground />
-      
-      {/* Scanline effect */}
-      <div className="scanline" />
-      
-      {/* Main content */}
-      <main className="relative z-10">
-        <Header />
-        <About />
-        <Education />
-        <Experience />
-        <Skills />
-        <Projects />
-        <Certificates />
-        <Achievements />
-        <Contact />
-      </main>
+      {/* Scrollable content */}
+      <div className="relative z-20 pointer-events-auto">
+        {/* Spacer for animation duration */}
+        <div style={{ height: "400vh" }} />
+        
+        {/* Matrix grid background */}
+        <div className="matrix-bg" />
+        
+        {/* Particle animation */}
+        <ParticleBackground />
+        
+        {/* Scanline effect */}
+        <div className="scanline" />
+        
+        {/* Main content */}
+        <main className="relative z-10">
+          <Header />
+          <About />
+          <Education />
+          <Experience />
+          <Skills />
+          <Projects />
+          <Certificates />
+          <Achievements />
+          <Contact />
+        </main>
+      </div>
       
       <Navbar />
       
