@@ -24,8 +24,8 @@ export default function Home() {
       
       {/* Scrollable content */}
       <div className="relative z-20 pointer-events-auto">
-        {/* Spacer for animation duration - reduced to match actual animation time */}
-        <div style={{ height: "300vh" }} />
+        {/* Spacer for animation duration - matches animation scroll trigger */}
+        <div style={{ height: "500vh" }} />
         
         {/* Main content starts here */}
         <div className="relative">
