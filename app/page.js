@@ -24,11 +24,11 @@ export default function Home() {
       
       {/* Scrollable content */}
       <div className="relative z-20 pointer-events-auto">
-        {/* Spacer for animation duration - reduced to match actual animation time */}
-        <div style={{ height: "300vh" }} />
+        {/* Spacer for animation duration - matches animation scroll trigger */}
+        <div style={{ height: "800vh", pointerEvents: "none" }} />
         
-        {/* Main content starts here */}
-        <div className="relative">
+        {/* Main content starts here - immediately after animation */}
+        <div className="relative bg-background">
           {/* Matrix grid background */}
           <div className="matrix-bg" />
           
@@ -39,7 +39,7 @@ export default function Home() {
           <div className="scanline" />
           
           {/* Main content */}
-          <main className="relative z-10">
+          <main className="relative z-10 min-h-screen">
             <Header />
             <About />
             <Education />
