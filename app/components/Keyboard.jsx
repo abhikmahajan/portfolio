@@ -24,7 +24,7 @@ const Keyboard = ({ camera, light }) => {
   useEffect(() => {
     if (!camera || !light?.current) return;
 
-    // Delay to ensure DOM is ready
+    // Small delay to ensure DOM is ready
     const timer = setTimeout(() => {
       const timeline = gsap.timeline({
         scrollTrigger: {
@@ -42,51 +42,24 @@ const Keyboard = ({ camera, light }) => {
       const validRefs = keyRefs.current.filter((k) => k && k.group && k.material);
       if (validRefs.length === 0) return;
 
-      // Phase 1: Fade in keyboard (0% - 5%)
+      // Phase 1: Fade in keyboard (0-10% of scroll)
       timeline.to(
         validRefs.map((k) => k.material),
-        { opacity: 1, duration: 0.5, stagger: 0.02, ease: "power2.out" },
+        { opacity: 1, ease: "power2.out" },
         0
       );
+      timeline.to(camera.position, { z: 8, ease: "power2.out" }, 0);
 
-      timeline.to(camera.position, { z: 8, duration: 0.5 }, 0);
-
-      // Phase 2: Idle vibration & glow (5% - 30%)
+      // Phase 2: Scramble - Letters scatter in random directions (10-40% of scroll)
       timeline.to(
         validRefs.map((k) => k.group.position),
         {
-          x: (i) => gsap.getProperty(validRefs[i].group.position, "x") + (Math.random() * 0.2 - 0.1),
-          y: (i) => gsap.getProperty(validRefs[i].group.position, "y") + (Math.random() * 0.2 - 0.1),
-          duration: 1.5,
-          stagger: 0.02,
-          ease: "sine.inOut",
+          x: (i) => (Math.random() * 14 - 7),
+          y: (i) => (Math.random() * 12 - 6),
+          z: (i) => (Math.random() * 10 - 5),
+          ease: "power1.inOut",
         },
-        0.2
-      );
-
-      timeline.to(
-        validRefs.map((k) => k.material),
-        {
-          emissiveIntensity: 0.4,
-          duration: 1.5,
-          stagger: 0.02,
-          ease: "sine.inOut",
-        },
-        0.2
-      );
-
-      // Phase 3: Explosion outward (30% - 55%)
-      timeline.to(
-        validRefs.map((k) => k.group.position),
-        {
-          x: (i) => (Math.random() * 12 - 6),
-          y: (i) => (Math.random() * 10 - 5),
-          z: (i) => (Math.random() * 8 - 4),
-          duration: 1.5,
-          stagger: 0.01,
-          ease: "power2.in",
-        },
-        0.7
+        0.1
       );
 
       timeline.to(
@@ -95,23 +68,31 @@ const Keyboard = ({ camera, light }) => {
           x: (i) => Math.random() * Math.PI * 2,
           y: (i) => Math.random() * Math.PI * 2,
           z: (i) => Math.random() * Math.PI * 2,
-          duration: 1.5,
-          stagger: 0.01,
-          ease: "power2.in",
+          ease: "power1.inOut",
         },
-        0.7
+        0.1
       );
 
-      // Fade out non-name letters (55% - 65%)
+      // Add some glow during scramble
+      timeline.to(
+        validRefs.map((k) => k.material),
+        {
+          emissiveIntensity: 0.5,
+          ease: "sine.inOut",
+        },
+        0.1
+      );
+
+      // Phase 3: Fade out non-name letters (40-60% of scroll)
       timeline.to(
         validRefs
           .filter((_, i) => !name.includes(keys[i]))
           .map((k) => k.material),
-        { opacity: 0.05, duration: 0.8, ease: "power2.out" },
-        1.5
+        { opacity: 0.1, ease: "power2.out" },
+        0.35
       );
 
-      // Phase 4: Name letters pull to center (65% - 80%)
+      // Phase 4: Name letters converge to center (60-85% of scroll)
       name.split("").forEach((letter, idx) => {
         const keyIndex = keys.indexOf(letter);
         const keyRef = keyRefs.current[keyIndex];
@@ -124,52 +105,49 @@ const Keyboard = ({ camera, light }) => {
             x: target[0],
             y: target[1],
             z: target[2],
-            duration: 1.2,
-            ease: "back.out(2)",
+            ease: "back.out(1.8)",
           },
-          2.2 + idx * 0.05
+          0.5 + idx * 0.03
         );
 
         timeline.to(
           keyRef.group.rotation,
-          { x: 0, y: 0, z: 0, duration: 1.2, ease: "back.out(2)" },
-          2.2 + idx * 0.05
+          { x: 0, y: 0, z: 0, ease: "back.out(1.8)" },
+          0.5 + idx * 0.03
         );
 
         timeline.to(
           keyRef.material,
-          { emissiveIntensity: 1.5, duration: 0.8, ease: "power2.out" },
-          2.2 + idx * 0.05
+          { emissiveIntensity: 1.8, ease: "power2.out" },
+          0.5 + idx * 0.03
         );
       });
 
-      // Phase 5: Scale boost & glow (80% - 90%)
+      // Phase 5: Scale and final glow (85-100% of scroll)
       timeline.to(
         validRefs
           .filter((_, i) => name.includes(keys[i]))
           .map((k) => k.group.scale),
-        { x: 1.8, y: 1.8, z: 1.8, duration: 0.6, ease: "elastic.out(1.2, 0.5)" },
-        3.5
+        { x: 2, y: 2, z: 2, ease: "elastic.out(1.2, 0.5)" },
+        0.7
       );
 
       timeline.to(
         validRefs
           .filter((_, i) => name.includes(keys[i]))
           .map((k) => k.material),
-        { emissiveIntensity: 2, duration: 0.6, ease: "power2.out" },
-        3.5
+        { emissiveIntensity: 2.5, ease: "power2.out" },
+        0.7
       );
 
-      timeline.to(light.current, { intensity: 2, duration: 0.6, ease: "power2.out" }, 3.5);
-
-      // Phase 6: Final camera position (90% - 100%)
-      timeline.to(camera.position, { x: 0, y: 0.5, z: 4, duration: 0.8, ease: "power2.inOut" }, 4.2);
+      timeline.to(light.current, { intensity: 3, ease: "power2.out" }, 0.7);
+      timeline.to(camera.position, { x: 0, y: 0, z: 3.5, ease: "power2.inOut" }, 0.75);
 
       return () => {
         timeline?.scrollTrigger?.kill();
         timeline?.kill();
       };
-    }, 100);
+    }, 50);
 
     return () => clearTimeout(timer);
   }, [camera, light, keys, name]);
