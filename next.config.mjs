@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Force webpack instead of turbopack for stability
-  webpack: (config) => config,
+  experimental: {
+    turbopack: false,
+  },
+  webpack: (config) => {
+    return config;
+  },
 };
 
 export default nextConfig;
