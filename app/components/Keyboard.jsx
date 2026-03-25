@@ -30,7 +30,7 @@ const Keyboard = ({ camera, light }) => {
         scrollTrigger: {
           trigger: "body",
           start: "top top",
-          end: "+=400vh",
+          end: "+=300vh",
           scrub: 1,
           markers: false,
         },

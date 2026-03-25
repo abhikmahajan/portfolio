@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  webpack: (config, { isServer }) => {
-    return config;
+  experimental: {
+    turbopack: false,
   },
 };
 
