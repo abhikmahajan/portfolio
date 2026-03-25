@@ -18,36 +18,39 @@ export default function Home() {
   return (
     <div className='bg-background text-foreground relative'>
       {/* Canvas container - fixed for 3D scene */}
-      <div id="canvas-container" className="fixed top-0 left-0 w-full h-screen z-0 pointer-events-none">
+      <div id="canvas-container" className="fixed top-0 left-0 w-full h-screen z-0 pointer-events-none transition-opacity duration-300" style={{ opacity: 1 }}>
         <Scene />
       </div>
       
       {/* Scrollable content */}
       <div className="relative z-20 pointer-events-auto">
-        {/* Spacer for animation duration */}
-        <div style={{ height: "400vh" }} />
+        {/* Spacer for animation duration - reduced to match actual animation time */}
+        <div style={{ height: "300vh" }} />
         
-        {/* Matrix grid background */}
-        <div className="matrix-bg" />
-        
-        {/* Particle animation */}
-        <ParticleBackground />
-        
-        {/* Scanline effect */}
-        <div className="scanline" />
-        
-        {/* Main content */}
-        <main className="relative z-10">
-          <Header />
-          <About />
-          <Education />
-          <Experience />
-          <Skills />
-          <Projects />
-          <Certificates />
-          <Achievements />
-          <Contact />
-        </main>
+        {/* Main content starts here */}
+        <div className="relative">
+          {/* Matrix grid background */}
+          <div className="matrix-bg" />
+          
+          {/* Particle animation */}
+          <ParticleBackground />
+          
+          {/* Scanline effect */}
+          <div className="scanline" />
+          
+          {/* Main content */}
+          <main className="relative z-10">
+            <Header />
+            <About />
+            <Education />
+            <Experience />
+            <Skills />
+            <Projects />
+            <Certificates />
+            <Achievements />
+            <Contact />
+          </main>
+        </div>
       </div>
       
       <Navbar />

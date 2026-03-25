@@ -42,7 +42,6 @@ const Key = ({ letter, position, isTarget, animationRef }) => {
         anchorX="center"
         anchorY="middle"
         castShadow
-        font="/fonts/inter-var.woff"
       >
         {letter}
       </Text>
