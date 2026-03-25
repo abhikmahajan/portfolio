@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <div className='bg-background text-foreground relative'>
       {/* Canvas container - fixed for 3D scene */}
-      <div id="canvas-container" className="fixed top-0 left-0 w-full h-screen z-0 pointer-events-none">
+      <div id="canvas-container" className="fixed top-0 left-0 w-full h-screen z-0 pointer-events-none transition-opacity duration-300" style={{ opacity: 1 }}>
         <Scene />
       </div>
       

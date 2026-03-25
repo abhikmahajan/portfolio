@@ -143,6 +143,16 @@ const Keyboard = ({ camera, light }) => {
       timeline.to(light.current, { intensity: 3, ease: "power2.out" }, 0.7);
       timeline.to(camera.position, { x: 0, y: 0, z: 3.5, ease: "power2.inOut" }, 0.75);
 
+      // Phase 6: Fade out entire canvas after animation (95-100% of scroll)
+      const canvasContainer = document.getElementById("canvas-container");
+      if (canvasContainer) {
+        timeline.to(
+          canvasContainer,
+          { opacity: 0, pointerEvents: "none", ease: "power2.out" },
+          0.9
+        );
+      }
+
       return () => {
         timeline?.scrollTrigger?.kill();
         timeline?.kill();
