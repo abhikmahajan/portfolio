@@ -18,14 +18,14 @@ export default function Home() {
   return (
     <div className='bg-background text-foreground relative'>
       {/* Canvas container - fixed for 3D scene */}
-      <div id="canvas-container" className="fixed top-0 left-0 w-full h-screen z-0 pointer-events-none transition-opacity duration-300" style={{ opacity: 1 }}>
+      <div id="canvas-container" className="fixed top-10 left-0 w-full h-screen z-0 pointer-events-none transition-opacity duration-300" style={{ opacity: 1 }}>
         <Scene />
       </div>
       
       {/* Scrollable content */}
       <div className="relative z-20 pointer-events-auto">
         {/* Spacer for animation duration - matches animation scroll trigger */}
-        <div style={{ height: "800vh", pointerEvents: "none" }} />
+        <div style={{ height: "200vh", pointerEvents: "none" }} />
         
         {/* Main content starts here - immediately after animation */}
         <div className="relative bg-background">
